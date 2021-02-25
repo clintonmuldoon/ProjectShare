@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Assignment 3 Base code Adapted from W3.CSS Template</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=RobotoDraft"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  /><style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "RobotoDraft", "Roboto", sans-serif;
+    }
+    .w3-bar-block .w3-bar-item {
+      padding: 16px;
+    }
+    /* Table related css code */
+    .table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+     /* Navigation bar related css code */
+    #mySidebar{
+      background-color: #00457c;
+    }
+    .fa-caret-down,
+    .fa-remove,
+    .fa-inbox,
+    .fa-tasks,
+    .fa-trash,
+    .fa-edit,
+    .fa-bars{
+      color: white;
+    }
+     /* Variations of hover colour classes and non hover colours */
+    .mainremove:hover{
+      color: black;
+    }
+    .normal-buttons:hover{
+      background-color: #003763 !important;
+    }
+    .same-colour:hover{
+      background-color: #00457c !important;
+    }
+    .minimenu {
+      background-color: #00457c !important;
+    }
+    .x-colour:hover {
+      background-color: #00457c !important;
+    }
+  </style>
+  <body>
+    <!-- Side Navigation -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card"
+      style="z-index:3;width:320px;background-color:00457c;"
+      id="mySidebar"
+    >
+      <a
+        href="Project Share.html"
+        class="w3-bar-item w3-button w3-large normal-buttons"
+        ><i class="fa fa-edit"></i> &nbsp; <font style="color: white">Project Share</font>
+        
+        <a
+          href="javascript:void(0)"
+          onclick="w3_close()"
+          title="Close Sidemenu"
+          class="w3-bar-item w3-button w3-hide-large w3-large"
+          ><font style="color: white">Close </font> <i class="fa fa-remove"></i
+        ></a>
+
+        <a
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button w3-red w3-button w3-hover-green w3-left-align"
+          onclick="document.getElementById('id01').style.display='block'"
+          >Share <i class="w3-padding fa fa-pencil"></i
+        ></a>
+
+
+        <a
+          id="myBtn"
+          onclick=""
+          href="#"
+          class="w3-bar-item w3-button same-colour"
+          ><i class="fa fa-inbox w3-margin-right  "></i><font style="color:white">Shared Files</font><i
+            class="w3-margin-left "
+          >
+          </i>
+        </a>
+
+
+        
+         <!-- Project 1 Button --> 
+        <a
+          id="myBtn"
+          onclick="myFunc('Demox')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button normal-buttons"
+          ><i class="w3-margin-right"></i><font style="color: white">Project - 1</font>
+          <i class="fa fa-caret-down w3-margin-left">
+            </i>
+        </a>
+
+        <!-- Project 1 Python, SQL, Image  File Buttons-->
+        <div id="Demox" class="w3-hide w3-animate-left">
+            <a
+              href="javascript:void(0)"
+              class="w3-bar-item w3-button w3-border-bottom test"
+              onclick="doShare('File1');w3_close();"
+              id="firstTab"
+            >
+              <div class="w3-container">
+                <img
+                  class="w3-round w3-margin-right"
+                  src="./fileIcon3.png"
+                  style="width:15%;"
+                /><span class="w3-opacity w3-large">Python Files</span>
+                <h6></h6>
+                <p>Due - 24/2/2020</p>
+              </div>
+            </a>
+            <a
+              href="javascript:void(0)"
+              class="w3-bar-item w3-button w3-border-bottom test"
+              onclick="doShare('File2');w3_close();"
+            >
+              <div class="w3-container">
+                <img
+                  class="w3-round w3-margin-right"
+                  src="./fileIcon5.png"
+                  9RWD1R
+                  style="width:15%;"
+                /><span class="w3-opacity w3-large">SQL Files</span>
+                <p>Due - 13/2/2020</p>
+              </div>
+            </a>
+            <a
+              href="javascript:void(0)"
+              class="w3-bar-item w3-button w3-border-bottom test"
+              onclick="doShare('File3');w3_close();"
+            >
+              <div class="w3-container">
+                <img
+                  class="w3-round w3-margin-right"
+                  src="./ImageIcon1.png"
+                  style="width:15%;"
+                /><span class="w3-opacity w3-large">Licenced Images</span>
+                <p>Due - 2/2/2020</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2 Button-->
+      <a
+          id="myBtn"
+          onclick="myFunc('Demo1')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button normal-buttons"
+          ><i class="w3-margin-right"></i><font style="color: white">Project - 2</font>
+          <i class="fa fa-caret-down w3-margin-left">
+          </i>
+        </a>
+        
+
+        <!-- Project 2 CSS, HTML, Image File Buttons -->
+        <div id="Demo1" class="w3-hide w3-animate-left">
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-border-bottom test"
+            onclick="doShare('File1.1');w3_close();"
+            id="firstTab"
+          >
+            <div class="w3-container">
+              <img
+                class="w3-round w3-margin-right"
+                src="./fileIcon3.png"
+                style="width:15%;"
+              /><span class="w3-opacity w3-large ">CSS Files</span>
+              <h6></h6>
+              <p>Due - 25/2/2021</p>
+            </div>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-border-bottom test"
+            onclick="doShare('File2.1');w3_close();"
+          >
+            <div class="w3-container">
+              <img
+                class="w3-round w3-margin-right"
+                src="./fileIcon5.png"
+                9RWD1R
+                style="width:15%;"
+              /><span class="w3-opacity w3-large">HTML Files</span>
+              <p>Due - 12/2/2021</p>
+            </div>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-border-bottom test"
+            onclick="doShare('File3.1');w3_close();"
+          >
+            <div class="w3-container">
+              <img
+                class="w3-round w3-margin-right"
+                src="./ImageIcon1.png"
+                style="width:15%;"
+              /><span class="w3-opacity w3-large">Licenced Images</span>
+              <p>Due - 5/2/2021</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Trash Button -->
+        <a
+          id="myBtn"
+          onclick="myFunc('Demo2')"
+          href="javascript:void(0)"
+          class="w3-bar-item w3-button normal-buttons"
+          ><i class="fa fa-trash w3-margin-right"></i>
+          <font style="color: white">Trash</font>
+          <i class="fa fa-caret-down w3-margin-left">
+            </i></a>
+          <!-- Trash indexV2.1.html Button -->
+
+        <div id="Demo2" class="w3-hide w3-animate-left">
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-border-bottom test"
+            onclick="doShare('Trash');w3_close();"
+            id="firstTab"
+          >
+            <div class="w3-container">
+              <img
+                class="w3-round w3-margin-right"
+                src="./fileIcon3.png"
+                style="width:15%;"
+              /><span class="w3-opacity w3-large">indexV2.1.html</span>
+              <h6></h6>
+            </div>
+          </a>
+        </div>
+        <!-- Share Log Button -->
+
+        <a 
+        id= "myBtn"
+        onclick="Sharetable('Log')"
+        href="javascript:void(0)" 
+        class="w3-bar-item w3-button normal-buttons"
+        ><i class="fa fa-tasks w3-margin-right"></i>
+         <font style="color: white">Share Log</font>
+      </a>
+    </nav>
+
+    <!-- Modal that pops up when you click on "Share" -->
+    <div id="id01" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom ">
+        <!-- Header -->
+        <div class="w3-container w3-padding minimenu">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button minimenu w3-right w3-xxlarge x-colour "
+            ><i class="fa fa-remove mainremove"></i
+          ></span>
+          <h2 style="color: white">Share</h2>
+        </div>
+        <!-- Information Bars -->
+        <div class="w3-panel ">
+          <label>User</label>
+          <input class="w3-input w3-border w3-margin-bottom " type="text" />
+
+          <label>File Upload</label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" />
+          <!-- Upload Button -->
+          <a
+          class="w3-button w3-red w3-hover-green"
+          >Upload </i
+        ></a>
+          <!-- Online file location-->
+          <p></p>
+          <label>Location &nbsp; &nbsp; &nbsp; &nbsp;</label>
+          
+          <select name="Projects" id="Projects">
+            <option value="Project 1">Project 1</option>
+            <option value="Project 2">Project 2</option>
+          </select>
+          <p></p>
+          <!-- Message Box -->
+          <input
+            class="w3-input w3-border w3-margin-bottom"
+            style="height:150px"
+            placeholder="Message"
+          />
+          <div class="w3-section">
+            <a
+              class="w3-button w3-black w3-hover-red"
+              onclick="document.getElementById('id01').style.display='none'"
+              >Cancel <i class="fa fa-remove"></i
+            ></a>
+            <a
+              class="w3-button w3-red w3-right w3-hover-green   "
+              onclick="document.getElementById('id01').style.display='none'; document.getElementById('successmessage').style.display='block'"
+              >Share <i class="fa fa-paper-plane"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Overlay effect when opening the side navigation on small screens -->
+    <div
+      class="w3-overlay w3-hide-large w3-animate-opacity"
+      onclick="w3_close()"
+      style="cursor:pointer"
+      title="Close Sidemenu"
+      id="myOverlay"
+    ></div>
+
+    <!-- Page content -->
+    <div class="w3-main" style="margin-left:320px;">
+      <i
+        class="fa fa-bars w3-button w3-hide-large w3-xlarge w3-margin-left w3-margin-top normal-buttons minimenu"
+        onclick="w3_open()"
+      ></i>
+      <a
+        href="javascript:void(0)"
+        class="w3-hide-large w3-red w3-button w3-right w3-margin-top w3-margin-right w3-hover-green"
+        onclick="document.getElementById('id01').style.display='block'"
+        ><i class="fa fa-pencil"></i
+      ></a>
+      <!-- The Files -->
+      <div id="File1" class="w3-container file">
+        <br />
+        <img
+          class="w3-round  w3-animate-top "
+          src="./fileIcon3.png"
+          style="width:20%;"
+        />
+        <h5 class="w3-opacity ">Python Files</h5>
+        <h4>
+          <i class="fa fa-clock-o"></i> Set Due Date - 24/2/2020 , Files - 30
+        </h4>
+        <a class="w3-button w3-red w3-hover-green" href="#"
+          >Share<i class="w3-margin-left fa fa-mail-reply"></i
+        ></a>
+        <a class="w3-button w3-light-grey" href="#"
+          >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+        ></a>
+        <hr />
+        <p>
+          File Size - 70 Megabytes
+        </p>
+        <p>Authorised users - Drake Bell, Nour Malak, Josh Peck</p>
+      </div>
+
+      <div id="File2" class="w3-container file">
+        <br />
+        <img
+          class="w3-round w3-animate-top"
+          src="./fileIcon5.png"
+          style="width:20%;"
+        />
+        <h5 class="w3-opacity">SQL Files</h5>
+        <h4>
+          <i class="fa fa-clock-o"></i> Set Due Date - 13/2/2020 , Files - 21
+        </h4>
+        <a class="w3-button w3-red w3-hover-green"
+          >Share<i class="w3-margin-left fa fa-mail-reply"></i
+        ></a>
+        <a class="w3-button w3-light-grey"
+          >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+        ></a>
+        <hr />
+        <p>
+          File Size - 90 Megabytes
+        </p>
+        <p>Authorised users - Monty smith, Arthur wilson, Brian carr</p>
+      </div>
+
+      <div id="File3" class="w3-container file">
+        <br />
+        <img
+          class="w3-round w3-animate-top"
+          src="./ImageIcon1.png"
+          style="width:20%;"
+        />
+        <h5 class="w3-opacity">Licenced Images</h5>
+        <h4>
+          <i class="fa fa-clock-o"></i> Set Due Date - 2/2/2020 , Files - 90
+        </h4>
+        <a class="w3-button w3-red w3-hover-green"
+          >Share<i class="w3-margin-left fa fa-mail-reply"></i
+        ></a>
+        <a class="w3-button w3-light-grey"
+          >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+        ></a>
+        <hr />
+        <p>
+          File Size - 20 Megabytes
+        </p>
+        <p>Authorised users - Bobby smith, Neymar wilson, Elise may</p>
+      </div>
+
+
+
+
+      <div id="File1.1" class="w3-container file">
+          <br />
+          <img
+            class="w3-round  w3-animate-top "
+            src="./fileIcon3.png"
+            style="width:20%;"
+          />
+          <h5 class="w3-opacity ">CSS Files</h5>
+          <h4>
+            <i class="fa fa-clock-o"></i> Set Due Date - 25/2/2020 , Files - 26
+          </h4>
+          <a class="w3-button w3-red w3-hover-green" href="#"
+            >Share<i class="w3-margin-left fa fa-mail-reply"></i
+          ></a>
+          <a class="w3-button w3-light-grey" href="#"
+            >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+          ></a>
+          <hr />
+          <p>
+            File Size - 50 Megabytes
+          </p>
+          <p>Authorised users - James smith, Aleck wilson, Anthony may</p>
+        </div>
+  
+        <div id="File2.1" class="w3-container file">
+          <br />
+          <img
+            class="w3-round w3-animate-top"
+            src="./fileIcon5.png"
+            style="width:20%;"
+          />
+          <h5 class="w3-opacity">HTML Files</h5>
+          <h4>
+            <i class="fa fa-clock-o"></i> Set Due Date - 12/2/2020 , Files - 21
+          </h4>
+          <a class="w3-button w3-red w3-hover-green"
+            >Share<i class="w3-margin-left fa fa-mail-reply"></i
+          ></a>
+          <a class="w3-button w3-light-grey"
+            >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+          ></a>
+          <hr />
+          <p>
+            File Size - 50 Megabytes
+          </p>
+          <p>Authorised users - James smith, Aleck wilson, Anthony may</p>
+        </div>
+  
+        <div id="File3.1" class="w3-container file">
+          <br />
+          <img
+            class="w3-round w3-animate-top"
+            src="./ImageIcon1.png"
+            style="width:20%;"
+          />
+          <h5 class="w3-opacity">Licenced Images</h5>
+          <h4>
+            <i class="fa fa-clock-o"></i> Set Due Date - 5/2/2020 , Files - 59
+          </h4>
+          <a class="w3-button w3-red w3-hover-green"
+            >Share<i class="w3-margin-left fa fa-mail-reply"></i
+          ></a>
+          <a class="w3-button w3-light-grey"
+            >Delete<i class="w3-margin-left fa fa-arrow-right"></i
+          ></a>
+          <hr />
+          <p>
+            File Size - 50 Megabytes
+          </p>
+          <p>Authorised users - James smith, Aleck wilson, Anthony may</p>
+        </div>
+
+      <!-- Trash File -->
+      <div id="Trash" class="w3-container file">
+        <br />
+        <img
+          class="w3-round  w3-animate-top"
+          src="./fileIcon3.png"
+          style="width:20%;"
+        />
+        <h5 class="w3-opacity ">indexV2.1.html</h5>
+        <h4><i class="fa fa-clock-o"></i> Time left: 2 days , 23 hours</h4>
+        <a class="w3-button w3-red w3-hover-green" href="#"
+          >Vote to Delete<i class="w3-margin-left fa fa-arrow-up"></i
+        ></a>
+        <p>● ● ● ● ○</p>
+        <hr />
+        <p>
+          File Size - 2.9 Megabytes
+        </p>
+      </div>
+      <!-- Share Log -->
+      <div id="Log" class="w3-container table">
+        <h2>Share Log</h2>
+
+        <table style="width:100%">
+          <tr>
+            <th>User</th>
+            <th>Activity</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>James Smith</td>
+            <td>indexV2.1.html moved to Trash</td>
+            <td>24/02/2020</td>
+          </tr>
+          <tr>
+            <td>James Smith</td>
+            <td>indexV2.1.html moved to HTML Files</td>
+            <td>22/02/2020</td>
+          </tr>
+          <tr>
+            <td>Aleck Wilson</td>
+            <td>indexV2.0.html deleted from Trash</td>
+            <td>22/02/2020</td>
+          </tr>
+          <tr>
+            <td>James Smith</td>
+            <td>indexV2.0.html moved to Trash</td>
+            <td>22/02/2020</td>
+          </tr>
+          <tr>
+            <td>Anthony May</td>
+            <td>Project.css moved to CSS Files</td>
+            <td>20/02/2020</td>
+          </tr>
+        </table>
+      </div>
+
+      
+    <!-- Success Message -->
+    <div id="successmessage" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-container w3-padding w3-green">
+          <span
+            onclick="document.getElementById('successmessage').style.display='none'"
+            class="w3-button w3-green w3-right w3-xxlarge"
+            ><i class="fa fa-remove"></i
+          ></span>
+          <h2>&#10004 Success! Share log updated.</h2>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var openInbox = document.getElementById("myBtn");
+      openInbox.click();
+
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+      function myFunc(id) {
+        var x = document.getElementById(id);
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = x.previousElementSibling.className.replace(
+            "w3-blue",
+            ""
+          );
+        }
+      }
+
+      doShare("File1");
+      function doShare(fileName) {
+        var i;
+        var x = document.getElementsByClassName("file");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        var x = document.getElementsByClassName("table");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x = document.getElementsByClassName("test");
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" w3-light-grey", "");
+        }
+        document.getElementById(fileName).style.display = "block";
+        event.currentTarget.className += " w3-light-grey";
+      }
+      // Replaces the page with share log
+      function Sharetable(tableName) {
+        var i;
+        var x = document.getElementsByClassName("file");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        var x = document.getElementsByClassName("table");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x = document.getElementsByClassName("test");
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(" w3-light-grey", "");
+        }
+        document.getElementById(tableName).style.display = "block";
+      }
+    </script>
+
+    <script>
+      var openTab = document.getElementById("firstTab");
+      openTab.click();
+    </script>
+  </body>
+</html>
